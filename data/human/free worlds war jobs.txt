@@ -853,3 +853,29 @@ mission "FW Bulk Refugees [0]"
 	on complete
 		payment 5000 180
 		dialog phrase "free worlds thanked refugee transport"
+		
+mission "Free Worlds Raid [0]"
+	name "Free Worlds Raid on <system>"
+	job
+	repeat
+	description "A group of Free Worlds guerrillas and their gear need passage to <destination> to sabotage Republic military sites. You will be compensated <payment> upon completion."
+	cargo guerrilla gear 5 15 .4
+	passengers 3 11 .4
+	infiltrating
+	clearance
+	to offer
+		random < 35
+		has "chosen sides"
+		not "event: fw armistice"
+	source
+		government "Free Worlds"
+	destination
+		distance 3 7
+		government "Republic"
+		attributes military
+	on visit
+		dialog phrase "generic cargo and passenger on visit"
+	on complete
+		payment 15000 250
+		dialog phrase "free worlds raiders delivered"
+
