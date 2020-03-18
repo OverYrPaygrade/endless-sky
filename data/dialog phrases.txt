@@ -102,4 +102,4 @@ phrase "generic pirate fleet battle on visit"
 
 phrase "generic live pirate bounty"
 	word
-		`You contact the bounty office for a live reward on the pirates. After taking them in and crosschecking them on a database, they find active bounties on the ship and crew, and reward you an amount of <payment>.`
+		`You contact the <planet> bounty office for a live reward on the pirates. After taking them in and crosschecking them on a database, they find active bounties on the ship and crew, and reward you an amount of <payment>.`
