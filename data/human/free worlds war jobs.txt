@@ -874,11 +874,11 @@ phrase "free worlds raiders delivered"
 		`, and you notice that <payment> was discreetly added to your account,`
 		`. When you check, you notice <payment> was provided to your balance.`
 		
-mission "Free Worlds Raid [0]"
-	name "Free Worlds Raid on <system>"
+mission "FW Operatives [0]"
+	name "FW Operatives to <system>"
 	job
 	repeat
-	description "A group of Free Worlds guerrillas and their gear need passage to <destination> to sabotage Republic military sites. You will be compensated <payment> upon completion."
+	description "A group of <bunks> Free Worlds guerrillas and their <tons> of gear need passage to <destination> to sabotage Republic military sites. You will be compensated <payment> upon completion."
 	cargo guerrilla gear 5 15 .4
 	passengers 3 11 .4
 	infiltrating
@@ -899,3 +899,28 @@ mission "Free Worlds Raid [0]"
 		payment 15000 250
 		dialog phrase "free worlds raiders delivered"
 
+
+mission "Free Worlds Operatives [1]"
+	name "FW Operatives to <system>"
+	job
+	repeat
+	description "Transport <bunks> Free Worlds operatives and <tons> of their equipment to the Rupublic world of <destination>."
+	cargo "operative equipment" 5 15 .4
+	passengers 3 11 .4
+	infiltrating
+	clearance
+	to offer
+		random < 12
+		has "chosen sides"
+		not "event: fw armistice"
+	source
+		government "Free Worlds"
+	destination
+		distance 3 7
+		government "Republic"
+		attributes military
+	on visit
+		dialog phrase "generic cargo and passenger on visit"
+	on complete
+		payment 15000 250
+		dialog phrase "free worlds raiders delivered"
