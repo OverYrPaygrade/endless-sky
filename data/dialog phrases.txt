@@ -99,3 +99,7 @@ phrase "generic fleet bounty hunting on visit"
 phrase "generic pirate fleet battle on visit"
 	word
 		`You've landed on <planet>, but there are still pirates circling overhead. You should take off and help finish them off.`
+
+phrase "generic live pirate bounty"
+	word
+		`You contact the bounty office for a live reward on the pirates. After taking them in and crosschecking them on a database, they find active bounties on the ship and crew, and reward you an amount of <payment>.`
