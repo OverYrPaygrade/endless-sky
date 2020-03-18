@@ -353,7 +353,114 @@ mission "Boarding Pirate (Large)"
 		conversation "boarding pirate"
 	destination "Earth"
 
+mission "Captured Pirates (small)"
+	name "Captured Pirates"
+	boarding
+	minor
+	description "Transport <bunks> captured pirates to <destination> and collect a live bounty."
+	to offer
+		random < 5
+	source
+		government "Pirate"
+		category "Light Warship"
+		not attributes "automaton"
+	destination
+		government "Republic" "Free Worlds" "Syndicate" "Neutral"
+		distance 2 5
+	passengers 2 5
+	on offer
+		require "Brig"
+		conversation
+			`It seems this particular group of pirates wants to surrender, or at least what's left of the crew. The <bunks> survivors are lined up against the wall of a flickering corridor, and you wonder how to deal with them.`
+			choice
+				`	(Take them into custody and turn them in for a bounty.)`
+					goto custody
+				`	(Waste the bastards.)
 
+			`	Your weapon springs to life, the split second screams of protest and mercy cut short as their bodies slump against each other on the floor. Rewarded as a pirate deserves.`
+			`	The ship itself is on the verge of breaking apart. No time to stick around.`
+				flee
+
+			label custody
+			`	With your weapon drawn, you escort the pirates off their broken wreck and through the shared airlock, leading them into the brig. These people seem dejected rather than loud mouthed like the typical brigands that taunt you over the comms.`
+			`	The nearest bounty office willing to take them in is a couple jumps away. You note it and add it to your log. You depart just as the other ship begins to tear asunder.`
+				launch
+	on complete
+		payment 10000 150
+		dialog phrase "generic live pirate bounty"
+
+mission "Captured Pirates (Medium)"
+	name "Captured Pirates"
+	boarding
+	minor
+	description "Transport <bunks> captured pirates to <destination> and collect a live bounty."
+	to offer
+		random < 5
+		"combat rating" > 1200
+	source
+		government "Pirate"
+		category "Medium Warship"
+		not attributes "automaton"
+	destination
+		government "Republic" "Free Worlds" "Syndicate" "Neutral"
+		distance 2 5
+	passengers 10 20
+	on offer
+		require "Brig"
+		conversation
+			`These pirates are well aware of your repuation, and once you dock with their crumbling ship they frantically declare their intent to surrender over the comms. The <bunks> survivors are rounded up and collected in the bridge.`
+			choice
+				`	(Take them into custody and turn them in for a bounty.)`
+					goto custody
+				`	(Finish them off.)
+
+			`	It's a strange sort of silence you experience when using your hand weapon, used to the shouting, the smoke, the sounds of laser fire whizzing by and impacting the walls. Not now. The only noise accompanying you is the sound of lifeless bodies dropping to the floor. Most governments would be appalled at your actions, but they will never know of your atrocities in the dark reaches of space.`
+			`	The ship itself is on the verge of breaking apart. No time to stick around.`
+				flee
+
+			label custody
+			`	With your weapon drawn, you escort the pirates off their broken wreck and through the shared airlock, leading them into the brig. These people seem dejected rather than loud mouthed like the typical brigands that taunt you over the comms.`
+			`	The nearest bounty office willing to take them in is a couple jumps away. You note it and add it to your log just as the other ship begins to crumble into nothingness.`
+				launch
+	on complete
+		payment 15000 200
+		dialog phrase "generic live pirate bounty"
+
+mission "Captured Pirates (Large)
+	name "Captured Pirates"
+	boarding
+	minor
+	description "Transport <bunks> captured pirates to <destination> and collect a live bounty."
+	to offer
+		random < 5
+		"combat rating" > 4000
+	source
+		government "Pirate"
+		category "Heavy Warship"
+		not attributes "automaton"
+	destination
+		government "Republic" "Free Worlds" "Syndicate" "Neutral"
+		distance 2 5
+	passengers 15 36
+	on offer
+		require "Brig"
+		conversation
+			`As you dock yourself with the derelict vessel, its captain sends you an urgent hail, informing you the <origin> has suffered critical damage and is beginning to overload. They offer unconditonal surrender and beg you to get them off that ship immediately.`
+			choice
+				`	(Accept their surrender, and turn them in for a bounty.)`
+					goto custody
+				`	(Leave them to their fate.)
+
+			`	You refuse to answer their increasingly frantic hails, silently pulling the ship away from theirs. Small explosions rack their hull, and eventually the panicked transmissions turn silent.`
+				flee
+
+			label custody
+			`	Weapons are drawn at the airlock as it opens, and various disheveled crewman pour through, some on their own, others dragging wounded comrades with them. Explosions begin to rack the other ship and you're forced to pull away. A quick count indicates <bunks> crewmen made it out, and all are placed in custody.`
+			`	The nearest bounty office willing to take them in is a couple jumps away. You note it and add it to your log just as the other ship begins to crumble into nothingness.`
+				launch
+	on complete
+		payment 20000 220
+		dialog phrase "generic live pirate bounty"
 
 mission "Pirate Ambush"
 	invisible
