@@ -455,7 +455,7 @@ mission "Captured Pirates (Large)
 				flee
 
 			label custody
-			`	Weapons are drawn at the airlock as it opens, and various disheveled crewman pour through, some on their own, others dragging wounded comrades with them. Explosions begin to rack the other ship and you're forced to pull away. A quick count indicates <bunks> crewmen made it out, and all are placed under arrest.`
+			`	Weapons are drawn at the airlock as it opens, and various disheveled crewman pour through, some on their own, others dragging wounded comrades with them. Explosions begin to rack the other ship and you're forced to pull away. A quick count indicates <bunks> crewmen made it out, and all are placed in custody.`
 			`	The nearest bounty office willing to take them in is a couple jumps away. You note it and add it to your log just as the other ship begins to crumble into nothingness.`
 				launch
 	on complete
