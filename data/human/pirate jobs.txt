@@ -3172,11 +3172,50 @@ mission "Mercenary Extraction [0]"
 		attributes uninhabited farming mining oil
 		not attributes "near earth"
 	npc
-		government "Bounty Hunter"
+		government "Militia"
 		personality nemesis waiting plunders
 		system
 			distance 3 6
-		fleet "Bounty Hunters"
+		fleet "Small Militia"
+	on stopover
+		dialog phrase "merc infiltration"
+	on visit
+		dialog "You reached <planet>, but still haven't extracted the target from <stopovers>! Make sure you go there first."
+	on complete
+		payment 60000 300
+		reputation: Pirate" += 5
+		dialog phrase "extracted target"
+
+mission "Mercenary Extraction [1]"
+	name "Mercenary extraction on <stopovers>"
+	job
+	repeat
+	description "A group of <bunks> mercenaries were hired to kidnap a high value target at <stopovers>, and bring them to their employers at <destination>. Infiltrate them and their <tons> of gear to both sites. Being scanned will result in a 70,000 credit fine and both passengers and cargo will be seized. You will need to land away from the spaceport or else you may get caught. Payment is <payment>."
+	passengers 4 15 .6
+	cargo "mercenary gear" 3 12 .6
+	illegal 70000 "After noticing you're carrying wanted criminals and illegal weaponry aboard your ship, the authorities forcefully board, overwhelming your passengers with a mix of tear gas and stun weaponry. As they're hauled off along with their gear, you're handed a moderate fine for harboring them aboard your ship."
+	stealth
+	clearance
+	infiltrating
+	to offer
+		random < 20
+		"combat rating" > 1200
+	source
+		government "Pirate"
+	stopover
+		distance 4 14
+		attributes research rich oil
+		not attributes station
+	destination
+		distance 2 7
+		attributes uninhabited farming mining oil
+		not attributes "near earth"
+	npc
+		government "Militia"
+		personality nemesis waiting plunders
+		system
+			distance 3 6
+		fleet "Small Militia"
 	on stopover
 		dialog phrase "merc infiltration"
 	on visit
