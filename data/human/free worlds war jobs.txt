@@ -854,6 +854,26 @@ mission "FW Bulk Refugees [0]"
 		payment 5000 180
 		dialog phrase "free worlds thanked refugee transport"
 		
+phrase "free worlds raiders delivered"
+	word
+		`The <ship> gets `
+		`The Free Worlds raiders point you `
+		`You make a stealthy approach `
+	word
+		`to an isolated part of the planet. `
+		`over a small settlement that's relatively isolated. `
+		`on the outskirts of one of the larger cities. `
+		`miles away from the nearest inhabited area. `
+	word
+		`The Free Worlds operatives gather their gear and unload off the ship`
+		`The operatives move in a hurry to offload their stuff`
+		`Silently, they collect everything they brought and depart the ship`
+	word
+		`. You send an encrypted message to the Free Worlds and it returns with confirmation of payment of <payment>.`
+		`, but not before their leader hands you a chip worth <payment>.`
+		`, and you notice that <payment> was discreetly added to your account,`
+		`. When you check, you notice <payment> was provided to your balance.`
+		
 mission "Free Worlds Raid [0]"
 	name "Free Worlds Raid on <system>"
 	job
