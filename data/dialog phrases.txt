@@ -99,7 +99,60 @@ phrase "generic fleet bounty hunting on visit"
 phrase "generic pirate fleet battle on visit"
 	word
 		`You've landed on <planet>, but there are still pirates circling overhead. You should take off and help finish them off.`
-
+    
+phrase "generic merc infiltration"
+	word
+		`You fly your ship to the directed coordinates`
+		`You pilot the <ship> to the landing sight`
+	word
+		`.`
+		`, which appears to be deserted land for miles around. `
+		`, just outside a small compound. The Mercenary leader urges you to make a hot landing. `
+		` and immediately takes small arms fire from the ground as you land. `
+		` and land in a quiet clearing.`
+	word
+		`The mercs file out and disappear as you watch. `
+		`They shout various orders at each other as they run out, weapons drawn. `
+		`The mercenaries immediately move to secure the landing site before moving on, telling you over radio to stay put. `
+	word
+		`It doesn't take too long for them to find their target, and when they get back they `
+		`Hours pass, with distant gunfire becoming more sporadic before they finally return. They `
+		`You see them running back with an incapacitated man to your ship, chased by armed men. They `
+		`Solemn silence fills the air as they return with both their target and two of their dead comrades, and they`
+		`Three of the <bunks> mercenaries are wounded, but all make it back, with their target in tow. They `
+		
+	word
+		`let you know to take off to the dropoff location.`
+		`frantially order you to leave immediately.`
+		`let you know they're ready to leave.`
+		`Ask you to bring them all to <destination>.`
+		
+phrase "extracted target"
+	word
+		`You are directed to `
+		`The dropoff site is `
+		`On the far side of the planet is `
+		`The agreed-upon landing site is `
+	word
+		`an empty stretch of land, `
+		`a fortified compound `
+		`an isolated settlement `
+		`a rocky waste `
+		`a clearing `
+		`some unmarked location, `
+		
+	word
+		`dotted with small emplacements and wandering patrols. `
+		`with a small group of men awaiting your ship. `
+		`accompanied by a parked ship already there for the transfer. `
+		`with a small convoy of vehicles parked at the edge. `
+		`occupied by what looks like planetary soldiers. `
+	word
+		`The target is shoved over and you receive a chip worth <payment>.`
+		`The transaction is silent, the mercs leaving with the target after handing over <payment>.`
+		`Tensions run high as the prisoner is exchanged for your share of <payment>.`
+		`You're given <payment> by the mercenary leader before they depart from the <ship>, urging you to leave as soon as possible.`
+    
 phrase "generic live pirate bounty"
 	word
 		`You contact the <planet> bounty office for a live reward on the pirates. After taking them in and crosschecking them on a database, they find active bounties on the ship and crew, and reward you an amount of <payment>.`
