@@ -72,7 +72,6 @@ phrase "generic waypoint on visit"
 	word
 		`You have reached <planet>, but you haven't visited all the systems yet! Better depart and make sure you visit <waypoints>.`
 
-
 phrase "generic hunted bounty eliminated dialog"
 	word
 		`The <npc> has been eliminated. You can claim the bounty payment by returning to <destination>.`
@@ -99,3 +98,20 @@ phrase "generic fleet bounty hunting on visit"
 phrase "generic pirate fleet battle on visit"
 	word
 		`You've landed on <planet>, but there are still pirates circling overhead. You should take off and help finish them off.`
+
+phrase "generic smuggled cargo delivered"
+	word
+		`You find the contact at the edge of the spaceport. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>.`
+		`You find the contact outside of the main city. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>.`
+
+phrase "generic wanted passengers delivered"
+	word
+		`Your <passengers> insist that you land on the edge of the spaceport to avoid being seen. After you land, they pay you <payment> before quickly grabbing their things and leaving your ship.`
+
+phrase "generic wanted single passenger delivered"
+	word
+		`You land outside of the main city to avoid any chances of your passenger being seen. They grab their things and make their way off of your ship after paying you <payment>.`
+
+phrase "generic delivered slaves"
+	word
+		`After landing on <planet>, the pirates move the <bunks> slaves from your ship and pay you <payment>.`
