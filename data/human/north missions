@@ -1,0 +1,428 @@
+# Copyright (c) 2020 by Royal Sir
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+
+mission "mining operation [noncombat1]"
+	name "Collect Neodymium for Jazwell"
+	description "Mine 15 tons of Neodymium and deliver it to Jazwell Tempering on Prime for a reward."
+	source "Prime"
+	waypoint "Rigel"
+	to offer
+		has "ships: Transport"
+		not "mining operation [combat1]: offered"
+	
+	on offer
+		conversation
+			`While sipping your drink and checking the menu, a man casually strolls up and takes the stool next to yours. The first thing you notice is his business casual suit, which might have been nice at one point had it not been for the multitude of scorch marks and singes all over. From the looks of it, he probably spends more time at a metalworking site common around here than at a desk.`
+			`	"Hey... are you the... captain of the <ship>?" He asks you, still staring forward waiting for the bartender to come serve him.`
+			choice
+				`	"Who's asking?"`
+				`	"Yeah. Is there something you need?"`
+				`	"You got the wrong person."`
+						decline
+			`	He pulls out a business card and slides it underneath your half-empty glass. On it is a company name, Jazwell Tempering, and a graphic of a half-molten alloy dripping over an abstract shape resembling the letter J.`
+			`	"You probably haven't heard of us. We subcontract out to various big names. Delta V. The Navy. Various maintainence agencies. Basically, we refine and work metal into engine components. Normally we handle all the work, from having our own mining fleet to refining, to working, and finally to building those components. Makes things cheaper in the long run."`
+			choice
+				`	"So why are you approaching an independent captain?"`
+					goto sigh
+				`	"Get to the point."`
+					goto sigh
+				`	"You still havent told me your name."`
+					goto name
+			label name
+			`	The man shrugs. "Just call me Weir. But that's not what's important."`
+			label sigh
+			`	"He sighs and pauses for a second. The bartender finally got to him and he takes a minute waiting for his drink. He finally swivels his body torwards you, pint of beer in hand.`
+			`	"Here's the thing. We've had to put a hold on our mining convoys while getting things sorted out. Some kind of bounty on our fleets. The cargo is quite a valuable commodity. Tell me, have you heard of Neodymium?"`
+			choice
+				`	"Yes, I think so."`
+				`	[Shake your head]`
+			`	"It's what we use to make magnetized alloys for the generators. The stuff is quite pricey, so we really try to harvest it ourselves. Except we can't. So now we've gotten shortage of the stuff, so we can't produce anything if we can't keep up the supply."`
+			`	He takes a long swig from his beer. "Tell me, captain... I know you're not exactly flying a warship, but you wouldn't happen to have a gun strapped on it, would you? A beam, or... blaster?"`
+			choice
+				`	"Sorry. I didn't outfit for combat."`
+					goto noncombat
+				`	"Yeah, <ship> is armed."`
+					goto armed
+				`	"Why do you ask?"`
+			`	"I'm not asking you to fight pirates," he reassures you. "It's just that until I figure out this pirate problem I gotta rely on people not associated with our fleet. People using ships that people won't think have Neodymium in their holds. People that are capable of mining out this material and getting it back to us. At a markup, of course."`
+			choice
+				`	"Sounds too dangerous and not what I really handle. Find someone else."`
+					goto noncombat
+				`	"I might be of assistance."`
+					goto armed
+			label noncombat
+			`	He slowly nods his head, disappointed. "I see. Sorry to waste your time." Soon after he pays for his drink and leaves, leaving you alone in the bar.`
+				decline
+			label armed
+			`	He talks quickly. "Good, good. This is the deal. The nearby system, <waypoint>, is where we usually collect the material. It's probably gonna be a little dangerous, but they aren't exactly gonna gun for you. With a little luck they'll be preoccupied with the Navy or some other merchant convoy. You want to shoot the red asteroids. Make sure you collect the deposits as soon as you blast them apart before they scatter into space. 15 tons of Neodymium for <payment>, that's all I ask. Do we have a deal?"`
+			choice
+				`	"Deal."`
+					goto deal
+				`	"No deal."`
+					goto noncombat
+			label deal	
+			`	He slips a small credit chip to you. "Drink's on me. Do this for us and we'll both benefit greatly."`
+				accept
+
+	on complete
+		outfit "Neodymium" -15
+		payment 70000
+		conversation
+			`You pull out your business card and use that to contact Jazwell that you've landed with 15 tons of Neodymium, as asked. Shortly later, a team of workers with the man you talked to earlier, introduced as Weir, show up on a freight tram to unload your haul.`
+			`After slipping you a <payment> credit chip, Weir thanks you profusely, as if this was a load off his mind. "We could use another shipment like this," he tells you. "If you're up for more, just give us a call."`
+
+mission "mining operation [combat1]"
+	name "Recover Jazwell Freighters"
+	description "Search and rescue the Silent Flute and the Kilimanjaro, last found in the Hassaleh system."
+	source "Prime"
+	waypoint "Hassaleh"
+	to offer
+		has "ships: Interceptor, Light Warship"
+		not "mining operation [noncombat1]: offered"
+	npc accompany save
+		system "Hassaleh"
+		personality escort derelict timid
+		government "Merchant"
+		ship "Freighter" "Kilimanjaro"
+
+	on offer
+		conversation
+			`While sipping your drink and checking the menu, a man casually strolls up and takes the stool next to yours. The first thing you notice is his business casual suit, which might have been nice at one point had it not been for the multitude of scorch marks and singes all over. From the looks of it, he probably spends more time at a metalworking site common around here than at a desk.`
+			`	"Hey... are you the... captain of the <ship>?" He asks you, still staring forward waiting for the bartender to come serve him.`
+			choice
+				`	"Who's asking?"`
+				`	"Yeah. Is there something you need?"`
+				`	"You got the wrong person."`
+					decline
+			`	He pulls out a business card and slides it underneath your half-empty glass. On it is a company name, Jazwell Tempering, and a graphic of a half-molten alloy dripping over an abstract shape resembling the letter J.`
+			`	"You probably haven't heard of us. We subcontract out to various big names. Delta V. The Navy. Various maintenence agencies. Basically, we refine and work metal into engine components. Normally we handle all the work, from having our own mining fleet to refining, to working, and finally to building those components. Makes things cheaper in the long run."`
+			choice
+				`	"So why are you approaching an independent captain?"`
+					goto sigh
+				`	"Get to the point."`
+					goto sigh
+				`	"You still havent told me your name."`
+					goto name
+			label name
+			`	The man shrugs. "Just call me Weir. But that's not what's important."`
+				goto sigh
+			label sigh
+			`	"He sighs and pauses for a second. The bartender finally got to him and he takes a minute waiting for his drink. He finally swivels his body towards you, pint of beer in hand.`
+			`	"Here's the thing. We've had to put a hold on our mining convoys while getting things sorted out. Some kind of bounty on our fleets. The cargo is quite a valuable commodity. Tell me, have you heard of Neodymium?"`
+			choice
+				`	"Yes, I think so."`
+				`	[Shake your head]`
+			`	"It's what we use to make magnetized alloys for the generators. The stuff is quite pricey, so we really try to harvest it ourselves. Except we can't. So now we've gotten shortage of the stuff, so we can't produce anything if we can't keep up the supply."`
+			`	He takes a long swig from his beer. "Here's the issue. When we recalled our fleets back to Prime, not... all of them made it back. We're still missing two freighters, the Silent Flute and the Kilimanjaro. With a little luck, they're still stuck around in the Hassaleh system, but I don't want any false hope. They're jam packed with Neodymium, to the point the shipment's probably worth more than the ships. I'd ask the navy, but they're a little stretched thin at the moment. Any chance you can go looking for them?"`
+			choice
+				`	"Can't you use your own people to find them?"`
+					goto find
+				`	"Yeah. I can look into this for you."`
+					goto look
+				`	"Sorry. I'm not up for it."`
+					goto no
+			label no
+			`	He slowly nods his head, disappointed. "I see. Sorry to waste your time." Soon after he pays for his drink and leaves, leaving you alone in the bar.`
+				decline
+			label find
+			`	His jaw locks for a second. "We may have... skimped... on private security. What little we do have is in the shipyard for repairs. So at the moment I'm forced to contract out to independent merchants. Besides, I'm pretty sure some pirate put a bounty on our ships, because everytime we send out something the gun right for us. I don't want any more unwanted attention at the moment until I can sort this pirate problem."`
+			choice
+				`	"Yeah. I can look into this for you."`
+					goto look
+				`	"Sorry. I'm not up for it."`
+					goto no
+			label look
+			`	He looks relieved. "Thanks, captain. I'll eagerly wait for your return. Hopefully with my missing freighters in tow." He slips a credit chip to you before standing up to leave. "Drink's on me."`
+				accept
+	on enter Rigel
+		dialog
+			`The sensors indicate only one stranded freighter in the system. No telling where or what happened to the other.`
+			`	At least you won't return empty handed. You try not to think about what likely happened here.`
+
+	on visit
+		dialog `You get contacted by Weir, the associate you talked to earlier. "Where's my freighters? Go back there and find them, dammit!"`
+
+	on fail
+		dialog `The Kilimanjaro has been destroyed. Your mission is a failure... hopefully you can nab some of the neodymium from the wreckage as a consolation prize.`
+
+	on complete
+		payment 20000
+		conversation
+			`	Upon returning to Prime, you hastily contact Jazwell Industries. Soon enough, the man you spoke to earlier, introduced as Weir, shows up, visibly shaken at the sight of only one freighter parked here. He makes a beeline to you.`
+			`	"Where the hell is the Silent Flute?" He demands. You try your best to inform him there was no trace of the ship when the captain of the Kilimanjaro enters the conversation.`
+			`	"I hate to break it to you," he informs Weir, "Pirates boarded them. Emptied the cargo, wiped them out, took the ship as a prize. Oh, god..." Apparently the two maintained communications as the whole event occured. "My guess is they either were going to come back for me, or maybe they thought I'd already be picked up or destroyed. I don't know."`
+			`	Weir hands you a 20k credit chip, although it's clear he's not happy about it. "Dammit!" he shouts at the ceiling. After giving him a minute to calm down, he faces you once more. "That's the second one this week. We can't sustain this... still, thanks for saving the other, I guess." He sighs. "I really got to do something about these pirates. I might have something for you soon. Check in with me tonight."`
+
+mission "mining operation [noncombat2]"
+	name "Collect More Neodymium for Jazwell"
+	description "Mine 30 tons of Neodymium from the Rigel system and return to Prime."
+	source "Prime"
+	waypoint "Rigel"
+	to offer
+		has "mining operation [noncombat1]: done"
+	on offer
+		conversation
+			`It doesn't take long for Weir to show up once he hears you're planetside, and you spot him moving at a brisk pace towards your ship. "Ah, captain <last>!" he greets, shaking your hand. "Glad you're here. I'm still stretched thin on asteroid miners, and I'd like to hire your services again!"`
+			choice
+				`	"Sure, I'm up for it."`
+					goto sure
+				`	"If it's the same deal as last time, not right now."`
+					goto not
+				`	"Last time nearly got me killed. No."`
+			`	His face turns crestfallen as you explain how you wish to never return to that perpetual warzone and that he should find someone a little more suicidal for the task. "...Very well," he quietly states. "I'll just find someone else then... damn!"`
+			`	He turns to go, leaving you alone.`
+				decline
+			label not
+			`	You explain how underequipped your ship is at the moment for mining and surviving the inevitable pirate attacks in the region, and ask him to call you later in case you upgrade. "That's... fair enough, I suppose," he replies. "I just hope you come back soon."`
+				defer
+			label sure
+			`	"Good." He looks around and lowers to a whisper. "I was hoping you could pick up on some more slack. I lost another miner and two contractors already, so I may need a bigger shipment from you... this time 30 tons of Neodymium."`
+			choice
+				`	"Consider it done."`
+					goto done
+				`	"I don't have that kind of cargo space available."`
+					goto cargo
+				`	"Why are you whispering?"`
+					goto whisper
+				`	"I'm not adding myself to your daily death tally. No."`
+					goto tally
+			label cargo
+			`	"Really?" He seems unconvinced at your statement. "Most ships have that kind of capacity... I don't know how you configured your ship, but I guess I'll have to take you at your word. Let me know when you have the space."`
+				defer
+			label whisper
+			`	You stare at him quizzically as he glances around the spaceport. "I'm not sure whether or not it's a coincidence," he starts, "but I'm getting the suspicion someone has information on who's delivering our shipments. Including information on our contractors."`
+			`	It's only a matter of time before you're a pirate target. Wonderful.`
+			`	Weir sighs. "Look, you've only done one shipment so far and it was pretty recent, so there shouldn't be any heat on you just yet. And the pay is good. <payment>, for three days' work."`
+			choice
+				`	"I'm in."`
+					goto done
+				`	"I don't have that kind of cargo space available."`
+					goto cargo
+				`	"I won't paint a target on my back for this."
+					goto tally
+			label tally
+			`	Weir looks a little surprised at your response, and takes a second to reply. "I was hoping I could count on you," he says. "Guess I can't hold you against wanting to save your own skin. Sorry to waste your time."`
+				decline
+			label done
+				accept
+	
+	npc 
+		personality nemesis plunders waiting harvests
+		system Rigel
+		government Pirate
+		ship "Hawk" "Hawk (Speedy)" "Joker"
+		ship "Hawk" "Ace"
+
+	on complete
+		event "timed beer" 1
+		event "noncombat news" 60
+		outfit "Neodymium" -30
+		payment 140000
+		conversation
+			`Weir approaches you, credit chips in hand and a team of dock workers already working to unload your cargo. "How'd it go?"`
+			choice
+				`	"Without a hitch."`
+					goto hitch
+				`	"Troubling."`
+			`	"Sorry to hear that," he replies. "But at least you made it back. Hopefully your keep and my gratitude will be enough for you."`
+				goto beer
+			label hitch
+			`	"Glad to hear," he replies. "At least you seem to be having good luck. Wish I could say that about my people at the moment."`
+				goto beer
+			label beer
+			`	Weir watches his team finish unloading the precious metals and checks his watch. "Listen, I have to leave and help with processing, but come by the bar in an hour. I'd like to talk about what's going on with those raids		ship "Hawk" "Ace"		ship "Hawk" "Ace"."`
+
+event "timed beer" 1
+
+event "noncombat news" 31
+
+mission "mining operation [combat2]"
+	name "Security for Jazwell"
+	description "Provide security for a Jazwell mining ship at Rigel and return to Prime."
+	source "Prime"
+	waypoint "Rigel"
+	to offer
+		has "mining operation [combat1]: done"
+
+	npc accompany
+		personality escort timid mining harvests 
+		government "Merchant"
+		ship "Headhunter" "Livid Mother"
+
+	on offer
+		conversation
+			`Using Weir's business card, you track down the Jazwell manufacturing center and call ahead. Within a couple minutes, you get ahold of him on the other end. "Captain <last>! Good timing. We have a mining ship about to head out to Rigel and it needs an escort. Pay will be the same as last time. Interested?"`
+			choice
+				`	"Consider it done."`
+					goto done
+				`	"I think I'm in over my head with this one."`
+			`	"Really?" Weir sounds surprised over the comms. "Well... damn. I honestly wish you were up for it." The call ends.`
+				decline
+			label done
+			`	"Great! I'll let the other ship know to follow you out. It's the Livid Mother, one of the contractors. Just keep them safe in Rigel until they say they're done."`
+				accept
+
+	npc kill
+		personality plunders waiting harvests
+		system Rigel
+		government Pirate
+		ship "Hawk" "Hawk (Speedy)" "Joker"
+		ship "Hawk" "Ace"
+		dialog "The Livid Mother contacts you over the comms, letting you know they've collected enough Neodymium and are ready to jump out of here."
+
+	on fail
+		dialog "The Livid Mother is destroyed. You should probably consider a career other than private security."
+
+	on complete
+		event "event combat news" 60
+		payment 60000
+		conversation
+			`Once both ships touch down safely, you contact Weir, letting him know that the mission was a success. He sounds relieved as he tells you to stay put until his people arrive to unload the precious metals from the other ship. When they do, the team foreman approaches and hands you a credit chip worth <payment>.`
+
+event "timed beer"
+	system "Rigel"
+		fleet "Small Northern Merchants" 2000
+		fleet "Large Northern Merchants" 4000
+		fleet "Small Republic" 3000
+		fleet "Large Republic" 5000
+		fleet "Small Northern Pirates" 1500
+		fleet "Large Northern Pirates" 2500
+		fleet "Human Miners" 2000
+
+mission "mining operation [noncombat3]"
+	name "Talk to Weir in the bar and see what he wants."
+	to offer
+		has "mining operation [combat2]: done"
+		not "timed beer: offered"
+
+	on offer
+		log "Weir believes there's a certain organization based in the Anarchist planets that's specifically targeting his mining fleets. He has let me know that he may require my services in the future and will send word for me when he does."
+
+		conversation
+			`You decide to take up on Weir's offer and visit the bar, finding him quietly staring at his empty beer mug on the table. He looks up at you as you join him. "Oh, you came. Good." He relaxes somewhat, but returns to staring at the beer. "You know, ever since the raids started happening on my mining fleet, I've been paying close attention to the Navy reports on pirate activity in Rigel. Mainly things like identifying known pirate ships, wreckage tallies, the usual."`
+			choice
+				`	"So what's the issue?"`
+				`	"Find anything useful?"`
+				`	[Remain silent]`
+			`	I've been trying to get as much information as possible from the miners who survive the targeted raids and correlating that with Navy intelligence reports. Find ship names, groups, anything really." He quiets down for a second, scratching his eye, before popping a question. "Captain, out there, did you encounter a pair of ships named the Joker and the Ace?"`
+			choice
+				`	"Yeah."`
+					goto yeah
+				`	"I don't think so."`
+			`	"Maybe you did, maybe you didn't," he answers dismissively. "But those names aren't the first time I've heard of them."`
+			label yeah
+			`	"Those two have been harrasing my miners for the past month now. So far, all I know is that they're connected to some larger pirate organization in one of the Anarchist planets, one with some much bigger ships, too. I'm talking Firebirds and Leviations big, so they've got some good funding, probably in part from stolen Neodymium. I'm still working on what they're doing with those metals, maybe they're selling it off, maybe they're building ship components themselves, I don't know."`
+			choice
+				`	"Do you have any more ship names connected to them?"`
+					goto names
+				`	"Why are you telling me all this?"`
+					goto why
+				`	"So what now?"`
+					goto now
+				`	"Isn't Farpoint supposed to shield you from northern pirates?"
+					goto farpoint
+			label names
+			`	"Weir thinks for a moment, before pulling out an electronic pad to look it up. "I only know a couple at the moment. The Anubis is a Firebird, nearly nicked one of my freighters... The Bulgerian Edvard, a Raven... Painkiller was a... no, forget that one. The Navy picked her off... Joker and Ace are uncomfirmed wreckage piles in Rigel as well, thank the gods... and Full Roundhouse, an illegally modified Leviathan." Weir takes a breath as he puts it away.`
+				goto now
+			label why
+			`	"Look," Weir says, his grey eyes focusing on yours. "I need to find a way to either settle this whole thing with these pirates... or find some way to end them, I still don't know which yet. I may hire you on to transport me to one of those Anarchist worlds and I wanted to give you advance warning so you aren't caught unprepared."`
+				goto now
+			label farpoint
+				"Yes and no." Weir takes a moment to try and find the right words. "Farpoint is a military base designed to prevent invasion from... I don't know. Maybe to prevent planetary incursions from the Anarchist pirates. I do know it also sits next to a back route connecting to Syndicate territories. But while they do launch plenty of patrols, it's easy to circumvent the base when jumping to Rigel, and I believe many pirates camp out that back route as well. In other words, Rigel is still easy to raid."
+				goto now 
+			label now
+			`	"What now?" you ask, as you contemplate ordering a beer incase you're here for longer.`
+			`	"Now? Well, until I find out more about who I'm up against, there's not much you can really do for me. Unless you want to get more ore for me, which I'll always accept in the meantime. Just understand it'll be pretty dangerous for now. They seem to catch on pretty quickly who I use." Weir streches his arms up and yawns. "Thanks for coming, <first>. I'll get word out to you when I finally need you back."`
+				decline
+
+
+mission "mining operation [combat3]"
+	name "Recover Jazwell Manifests"
+	description "Board the Golden Jewel and recover stolen Jazwell manifests. Recapture the vessel if possible, but it's not necessary."
+	source "Prime"
+	to offer
+		has "mining operation [combat2]: done"
+
+	npc board
+		personality timid nemesis target
+		system Gorvi
+		government Pirate
+		ship "Freighter" "Freighter (Fancy)" "Golden Jewel"
+		conversation
+			`The pirates onboard retreated to a secure section of the ship. The manifests are thankfully found in one of the empty berthing units. With your objective secured, you can freely leave or press the attack.'
+
+	on offer
+		conversation
+			`[Jazwell Tempering was still experiencing issues lasat time you heard from them. Would you like to contact them?]`
+			choice
+				`[Yes]`
+				`[No]`
+					defer
+			`	You guess you are on the company shortlist, because when you mention your name to the receptionist at the plant it doesn't take long at all for Weir to reach out to you, who soon meets you at the spaceport bar.`
+			`	"Captain <first>!" he calls out to you as he gets closer. "I got a bit of a situation and I think you'll be up for it."`
+			choice
+				`	"Sure, what's going on?"`
+					goto on
+				`	"I actually just wanted to say hi..."`
+			`	He stops dead in his tracks, increduous at what you just said. "...You do realize I didn't just leave my people just to share a beer with someone I worked with twice? I need help!"`
+			choice
+				`	"Very well. What do you need?"`
+					goto on
+				`	"I wanted a beer, not a mission. Sorry."`
+			`	Weir mutters something you can't quite catch as he shakes his head and walks away, throwing his hands in the air in disbelief.`
+				decline
+			label on
+			`	The two of you take a seat at the bar and lower voices. He gingerly slides a picture to you, which is a rather gory pileup of corpses in what looks like a ship corridor. "I had this sent to me yesterday," he says, voice somber with withheld anger. "Not only did the pirates capture another one of my freighters, they... the bastards wiped out the crew. And thought it would be funny to send this as part of the ransom note." He immediately orders a shot.`
+			`	"They're holding the Golden Jewel somewhere up north, demanding I pay for the ship back. I'd much rather just pay someone to steal it back from them after what they did, but that's not the important part."`
+			choice
+				`	"So I'm not capturing a freighter?"`
+					goto capture
+				`	"What do you need me to do?"`
+					goto need
+				`	"Is this what they normally do to your ships?"`
+					goto normal
+			label capture
+				`	"No, no..." Weir starts, stammering. "I mean, yes... yes and no. I would definately like the ship back, and I'll gladly pay for it back if you do manage to bring it in tow, but it's something else that's vital."`
+					goto need
+			label normal
+				`	"Not at first." Weir answers, pulling the picture back into his pocket. "Independent merchant crews get the worst of it, because they don't work for anyone, so there's no one to get a ransom from. That's why some crews work under companies, there's security in case their ship gets captured. Pirates are less likely to just kill them off if they board. But this?" He stops for a moment, collecting himself. "This is new."`
+					goto need
+			label need
+				`	"Within the freighter are the latest company manifests. Who works for me, doing what, with how much. It's only a matter of time before the pirates discover those manifests and exploit them. I need you to board the ship and get them back."`
+				choice
+					`	"Why can't I just destroy the ship instead? It's safer than boarding."`
+						goto destroy
+					`	"I'll get those manifests back."`
+						goto get
+					`	"This is way over my league. I can't help you."`
+						goto league
+			label league
+			`	The image of several mutilated bodies sticks with you, and decide that if this is what you're up against, it won't end well for you. Weir gives a sigh of resignation as he downs his shot. "This is a rough business, <first>. I just wished I could have counted on you."`
+				decline
+			label destroy
+			`	"Because the mission author wanted to use the boarding mechanic and didn't really think this mission through," Weir answers. "Also, he wants to subtly offer a way that promotes disabling rather than destroying the ship without it looking unnatural. The in-universe explanation will come, but you'll have to wait."`
+				choice
+				`	"I'll get those manifests back."`
+						goto get
+					`	"This is way over my league. I can't help you."`
+						goto league
+			label get
+			`	"Thanks, Captain. All I know is it's in one of those empty sectors north of the Navy base on Farpoint. They're holding it in an undisclosed location rather than planetside. Good luck." He leaves a small credit chip behind to pay for the drinks and leaves.`
+				accept
+
+	on fail
+		dialog `The Golden Jewel was destroyed before you had a chance to board it. Next time, don't get so trigger happy.`
+
+	on complete
+		payment 40000
+		conversation
+			`It doesn't take long at all for one of Weir's assistants to arrive at the hangar after learning of your arrival. He's thrilled upon receiving the manifests, thumbing through the haphazard mix of physical and digital files. "He's going to be relieved about this," he exclaims with the slightest hint of a smile, handing you a <payment> chip. "He, on behalf of Jazwell, thanks you dearly for these documents."`
+
