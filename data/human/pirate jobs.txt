@@ -28,7 +28,7 @@ mission "Cargo Smuggling [0]"
 		dialog phrase "generic cargo on visit"
 	on complete
 		payment 4000 200
-		dialog "You find the contact at the edge of the spaceport. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
+		dialog "generic smuggled cargo delivered"
 
 mission "Cargo Smuggling [1]"
 	name "Smuggling to <planet>"
@@ -51,7 +51,7 @@ mission "Cargo Smuggling [1]"
 		dialog phrase "generic cargo on visit"
 	on complete
 		payment 4000 200
-		dialog "You find the contact at the edge of the spaceport. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
+		dialog "generic smuggled cargo delivered"
 
 mission "Cargo Smuggling [2]"
 	name "Smuggling to <planet>"
@@ -74,7 +74,7 @@ mission "Cargo Smuggling [2]"
 		dialog phrase "generic cargo on visit"
 	on complete
 		payment 5000 200
-		dialog "You find the contact at the edge of the spaceport. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
+		dialog "generic smuggled cargo delivered"
 
 mission "Cargo Smuggling [3]"
 	name "Smuggling to <planet>"
@@ -97,7 +97,7 @@ mission "Cargo Smuggling [3]"
 		dialog phrase "generic cargo on visit"
 	on complete
 		payment 6000 200
-		dialog "You find the contact at the edge of the spaceport. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
+		dialog "generic smuggled cargo delivered"
 
 
 
@@ -122,7 +122,7 @@ mission "Drug Running [0]"
 		dialog phrase "generic cargo on visit"
 	on complete
 		payment 5000 250
-		dialog "You find the contact at the edge of the spaceport. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
+		dialog "generic smuggled cargo delivered"
 
 mission "Drug Running [1]"
 	name "Drug run to <planet>"
@@ -145,7 +145,7 @@ mission "Drug Running [1]"
 		dialog phrase "generic cargo on visit"
 	on complete
 		payment 5000 250
-		dialog "You find the contact at the edge of the spaceport. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
+		dialog "generic smuggled cargo delivered"
 
 mission "Drug Running [2]"
 	name "Drug run to <planet>"
@@ -168,7 +168,7 @@ mission "Drug Running [2]"
 		dialog phrase "generic cargo on visit"
 	on complete
 		payment 7000 250
-		dialog "You find the contact at the edge of the spaceport. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
+		dialog "generic smuggled cargo delivered"
 
 mission "Drug Running [3]"
 	name "Drug run to <planet>"
@@ -191,7 +191,7 @@ mission "Drug Running [3]"
 		dialog phrase "generic cargo on visit"
 	on complete
 		payment 9000 250
-		dialog "You find the contact at the edge of the spaceport. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
+		dialog "generic smuggled cargo delivered"
 
 
 
@@ -216,7 +216,7 @@ mission "Bulk Cargo Smuggling [0]"
 		dialog phrase "generic cargo on visit"
 	on complete
 		payment 7000 200
-		dialog "You find the contact at the edge of the spaceport. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
+		dialog "generic smuggled cargo delivered"
 
 mission "Bulk Cargo Smuggling [1]"
 	name "Bulk smuggling to <planet>"
@@ -239,7 +239,7 @@ mission "Bulk Cargo Smuggling [1]"
 		dialog phrase "generic cargo on visit"
 	on complete
 		payment 10000 200
-		dialog "You find the contact at the edge of the spaceport. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
+		dialog "generic smuggled cargo delivered"
 
 mission "Bulk Cargo Smuggling [2]"
 	name "Bulk smuggling to <planet>"
@@ -262,7 +262,7 @@ mission "Bulk Cargo Smuggling [2]"
 		dialog phrase "generic cargo on visit"
 	on complete
 		payment 15000 200
-		dialog "You find the contact at the edge of the spaceport. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
+		dialog "generic smuggled cargo delivered"
 
 
 
@@ -287,7 +287,7 @@ mission "Bulk Drug Running [0]"
 		dialog phrase "generic cargo on visit"
 	on complete
 		payment 10000 250
-		dialog "You find the contact at the edge of the spaceport. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
+		dialog "generic smuggled cargo delivered"
 
 mission "Bulk Drug Running [1]"
 	name "Bulk drug run to <planet>"
@@ -310,7 +310,7 @@ mission "Bulk Drug Running [1]"
 		dialog phrase "generic cargo on visit"
 	on complete
 		payment 15000 250
-		dialog "You find the contact at the edge of the spaceport. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
+		dialog "generic smuggled cargo delivered"
 
 mission "Bulk Drug Running [2]"
 	name "Bulk drug run to <planet>"
@@ -333,7 +333,7 @@ mission "Bulk Drug Running [2]"
 		dialog phrase "generic cargo on visit"
 	on complete
 		payment 20000 250
-		dialog "You find the contact at the edge of the spaceport. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
+		dialog "generic smuggled cargo delivered"
 
 
 
@@ -389,7 +389,7 @@ mission "Stealth Cargo Smuggling (North) [0]"
 	on complete
 		payment 50000 300
 		"reputation: Pirate" += 5
-		dialog "You find the contact outside of the main city. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
+		dialog "generic smuggled cargo delivered"
 
 mission "Stealth Cargo Smuggling (North) [1]"
 	name "Highly illegal cargo to <planet>"
@@ -466,7 +466,7 @@ mission "Stealth Cargo Smuggling (North) [1]"
 	on complete
 		payment 75000 300
 		"reputation: Pirate" += 5
-		dialog "You find the contact outside of the main city. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
+		dialog "generic smuggled cargo delivered"
 
 mission "Stealth Cargo Smuggling (Core) [0]"
 	name "Highly illegal cargo to <planet>"
@@ -519,7 +519,7 @@ mission "Stealth Cargo Smuggling (Core) [0]"
 	on complete
 		payment 50000 300
 		"reputation: Pirate" += 5
-		dialog "You find the contact outside of the main city. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
+		dialog "generic smuggled cargo delivered"
 
 mission "Stealth Cargo Smuggling (Core) [1]"
 	name "Highly illegal cargo to <planet>"
@@ -598,7 +598,7 @@ mission "Stealth Cargo Smuggling (Core) [1]"
 	on complete
 		payment 75000 300
 		"reputation: Pirate" += 5
-		dialog "You find the contact outside of the main city. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
+		dialog "generic smuggled cargo delivered"
 
 mission "Stealth Cargo Smuggling (South) [0]"
 	name "Highly illegal cargo to <planet>"
@@ -652,7 +652,7 @@ mission "Stealth Cargo Smuggling (South) [0]"
 	on complete
 		payment 50000 300
 		"reputation: Pirate" += 5
-		dialog "You find the contact outside of the main city. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
+		dialog "generic smuggled cargo delivered"
 
 mission "Stealth Cargo Smuggling (South) [1]"
 	name "Highly illegal cargo to <planet>"
@@ -732,7 +732,7 @@ mission "Stealth Cargo Smuggling (South) [1]"
 	on complete
 		payment 75000 300
 		"reputation: Pirate" += 5
-		dialog "You find the contact outside of the main city. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
+		dialog "generic smuggled cargo delivered"
 
 
 
@@ -788,7 +788,7 @@ mission "Stealth Drug Running (North) [0]"
 	on complete
 		payment 75000 375
 		"reputation: Pirate" += 5
-		dialog "You find the contact outside of the main city. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
+		dialog "generic smuggled cargo delivered"
 
 mission "Stealth Drug Running (North) [1]"
 	name "Highly illegal drugs to <planet>"
@@ -865,7 +865,7 @@ mission "Stealth Drug Running (North) [1]"
 	on complete
 		payment 100000 375
 		"reputation: Pirate" += 5
-		dialog "You find the contact outside of the main city. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
+		dialog "generic smuggled cargo delivered"
 
 mission "Stealth Drug Running (Core) [0]"
 	name "Highly illegal drugs to <planet>"
@@ -918,7 +918,7 @@ mission "Stealth Drug Running (Core) [0]"
 	on complete
 		payment 75000 375
 		"reputation: Pirate" += 5
-		dialog "You find the contact outside of the main city. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
+		dialog "generic smuggled cargo delivered"
 
 mission "Stealth Drug Running (Core) [1]"
 	name "Highly illegal drugs to <planet>"
@@ -997,7 +997,7 @@ mission "Stealth Drug Running (Core) [1]"
 	on complete
 		payment 100000 375
 		"reputation: Pirate" += 5
-		dialog "You find the contact outside of the main city. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
+		dialog "generic smuggled cargo delivered"
 
 mission "Stealth Drug Running (South) [0]"
 	name "Highly illegal drugs to <planet>"
@@ -1051,7 +1051,7 @@ mission "Stealth Drug Running (South) [0]"
 	on complete
 		payment 75000 375
 		"reputation: Pirate" += 5
-		dialog "You find the contact outside of the main city. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
+		dialog "generic smuggled cargo delivered"
 
 mission "Stealth Drug Running (South) [1]"
 	name "Highly illegal drugs to <planet>"
@@ -1131,7 +1131,7 @@ mission "Stealth Drug Running (South) [1]"
 	on complete
 		payment 100000 375
 		"reputation: Pirate" += 5
-		dialog "You find the contact outside of the main city. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
+		dialog "generic smuggled cargo delivered"
 
 
 
@@ -1181,7 +1181,7 @@ mission "Wanted Passengers [1]"
 		dialog phrase "generic passenger on visit"
 	on complete
 		payment 20000 300
-		dialog "Your <passengers> insist that you land on the edge of the spaceport to avoid being seen. After you land, they pay you <payment> before quickly grabbing their things and leaving your ship."
+		dialog "generic wanted passenger delivered"
 	
 mission "Wanted Passengers [2]"
 	name "Wanted individuals to <planet>"
@@ -1205,7 +1205,7 @@ mission "Wanted Passengers [2]"
 		dialog phrase "generic passenger on visit"
 	on complete
 		payment 20000 300
-		dialog "Your <passengers> insist that you land on the edge of the spaceport to avoid being seen. After you land, they pay you <payment> before quickly grabbing their things and leaving your ship."
+		dialog "generic wanted passenger delivered"
 
 mission "Wanted Passengers [3]"
 	name "Wanted individuals to <planet>"
@@ -1229,8 +1229,7 @@ mission "Wanted Passengers [3]"
 		dialog phrase "generic passenger on visit"
 	on complete
 		payment 20000 300
-		dialog "Your <passengers> insist that you land on the edge of the spaceport to avoid being seen. After you land, they pay you <payment> before quickly grabbing their things and leaving your ship."
-
+		dialog "generic wanted passenger delivered"
 
 
 mission "Highly Wanted Passenger (North)"
@@ -1316,7 +1315,7 @@ mission "Highly Wanted Passenger (North)"
 	on complete
 		payment 200000 1000
 		"reputation: Pirate" += 5
-		dialog "You land outside of the main city to avoid any chances of your passenger being seen. They grab their things and make their way off of your ship after paying you <payment>."
+		dialog "generic wanted single passenger delivered"
 
 mission "Highly Wanted Passenger (Core)"
 	name "Galactic criminal to <planet>"
@@ -1403,7 +1402,7 @@ mission "Highly Wanted Passenger (Core)"
 	on complete
 		payment 200000 1000
 		"reputation: Pirate" += 5
-		dialog "You land outside of the main city to avoid any chances of your passenger being seen. They grab their things and make their way off of your ship after paying you <payment>."
+		dialog "generic wanted single passenger delivered"
 
 mission "Highly Wanted Passenger (South)"
 	name "Galactic criminal to <planet>"
@@ -1491,7 +1490,7 @@ mission "Highly Wanted Passenger (South)"
 	on complete
 		payment 200000 1000
 		"reputation: Pirate" += 5
-		dialog "You land outside of the main city to avoid any chances of your passenger being seen. They grab their things and make their way off of your ship after paying you <payment>."
+		dialog "generic wanted single passenger delivered"
 
 
 
@@ -1517,7 +1516,7 @@ mission "Slave Transport [0]"
 		dialog phrase "generic passenger on visit"
 	on complete
 		payment 75000 400
-		dialog "After landing on <planet>, the pirates move the <bunks> slaves from your ship and pay you <payment>."
+		dialog "generic delivered slaves"
 
 mission "Slave Transport [1]"
 	name "Transfer slaves to <planet>"
@@ -1541,7 +1540,7 @@ mission "Slave Transport [1]"
 		dialog phrase "generic passenger on visit"
 	on complete
 		payment 75000 400
-		dialog "After landing on <planet>, the pirates move the <bunks> slaves from your ship and pay you <payment>."
+		dialog "generic delivered slaves"
 
 mission "Slave Transport [2]"
 	name "Transfer slaves to <planet>"
@@ -1565,7 +1564,7 @@ mission "Slave Transport [2]"
 		dialog phrase "generic passenger on visit"
 	on complete
 		payment 75000 400
-		dialog "After landing on <planet>, the pirates move the <bunks> slaves from your ship and pay you <payment>."
+		dialog "generic delivered slaves"
 
 
 
@@ -1591,7 +1590,7 @@ mission "Bulk Slave Transport [0]"
 		dialog phrase "generic passenger on visit"
 	on complete
 		payment 100000 400
-		dialog "After landing on <planet>, the pirates move the <bunks> slaves from your ship and pay you <payment>."
+		dialog "generic delivered slaves"
 
 mission "Bulk Slave Transport [1]"
 	name "Transfer slaves to <planet>"
@@ -1615,7 +1614,7 @@ mission "Bulk Slave Transport [1]"
 		dialog phrase "generic passenger on visit"
 	on complete
 		payment 100000 400
-		dialog "After landing on <planet>, the pirates move the <bunks> slaves from your ship and pay you <payment>."
+		dialog "generic delivered slaves"
 
 
 
