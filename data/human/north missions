@@ -455,6 +455,7 @@ mission "mining operation [combat3]"
 mission "Neodymium Rush Order for Jazwell"
 	name "Neodymium Rush Order for Jazwell"
 	description "Jazwell Tempering has asked for a rush order of 30 tons of Neodymium by <date>. Payment is <payment>."
+	deadline 3
 	job
 	repeat
 	to offer
@@ -463,6 +464,12 @@ mission "Neodymium Rush Order for Jazwell"
 		random < 20
 	source
 		"Prime"
+	npc
+		personality plunders entering
+		system Rigel
+		government Pirate
+		fleet "Small Northern Pirates"
+		fleet "Large Northern Pirates"
 	on visit
 		dialog phrase "You've landed on the Prime, but don't have the requested amount of ore!"
 	on complete
