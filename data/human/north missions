@@ -347,7 +347,7 @@ outfit "Jazwell Documents"
 	category "Special"
 	cost -10000
 	thumbnail "outfit/license"
-	description "This messy compilation of digital files and paper manifests comprise the important documents for 
+	description "This messy compilation of digital files and paper manifests comprise important documents for Jazwell Tempering."
 
 
 ship "Freighter" "Boarding Documents"
@@ -433,7 +433,7 @@ mission "mining operation [combat3]"
 			`	The image of several mutilated bodies sticks with you, and decide that if this is what you're up against, it won't end well for you. Weir gives a sigh of resignation as he downs his shot. "This is a rough business, <first>. I just wished I could have counted on you."`
 				decline
 			label destroy
-			`	"`
+			`	He gives you an exasperated look, drawing out a sigh. "Because I need those files," he answers, thinly masking his tired tone. "Some of the things on there aren't copied on our end. And I need to make sure that if they aren't in there, the company is compromised."`
 				choice
 				`	"I'll get those manifests back."`
 						goto get
@@ -447,6 +447,7 @@ mission "mining operation [combat3]"
 		dialog `The Golden Jewel was destroyed before you could return the ship. Weir is not going to like this.`
 
 	on complete
+		outfit "Jazwell Documents" -1
 		payment 40000
 		conversation
 			`It doesn't take long at all for one of Weir's assistants to arrive at the hangar after learning of your arrival. He's thrilled upon receiving the manifests, thumbing through the haphazard mix of physical and digital files. "He's going to be relieved about this," he exclaims with the slightest hint of a smile, handing you a <payment> chip. "He, on behalf of Jazwell, thanks you dearly for these documents."`
