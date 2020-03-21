@@ -37,14 +37,14 @@ mission "mining operation [noncombat1]"
 				`	"You still havent told me your name."`
 					goto name
 			label name
-			`	The man shrugs and reaches over to flip the card around, pointing at one of the bolded names, Weir Davis. "Just call me Weir."`
+			`	The man shrugs and reaches over to flip the card around, pointing at one of the bolded names on the back, Weir Davis. "Just call me Weir."`
 			label sigh
 			`	"He sighs and pauses for a second. The bartender finally got to him and he takes a minute waiting for his drink. He finally swivels his body torwards you, pint of beer in hand.`
 			`	"Here's the thing. We've had to put a hold on our mining convoys while getting things sorted out. Some kind of bounty on our fleets. The cargo is quite a valuable commodity. Tell me, have you heard of Neodymium?"`
 			choice
 				`	"Yes, I think so."`
 				`	[Shake your head]`
-			`	"It's what we use to make magnetized alloys for the generators. The stuff is quite pricey, so we really try to harvest it ourselves. Except we can't. So now we've gotten shortage of the stuff, so we can't produce anything if we can't keep up the supply."`
+			`	"It's what we use to make magnetized alloys for the generators. The stuff is quite pricey, so we really try to harvest it ourselves. But with recent supply issues, production has been taking a hit."`
 			`	He takes a long swig from his beer. "Tell me, captain... I know you're not exactly flying a warship, but you wouldn't happen to have a gun strapped on it, would you? A beam, or... blaster?"`
 			choice
 				`	"Sorry. I didn't outfit for combat."`
@@ -62,7 +62,7 @@ mission "mining operation [noncombat1]"
 			`	He slowly nods his head, disappointed. "I see. Sorry to waste your time." Soon after he pays for his drink and leaves, leaving you alone in the bar.`
 				decline
 			label armed
-			`	He talks quickly. "Good, good. This is the deal. The nearby system, <waypoint>, is where we usually collect the material. It's probably gonna be a little dangerous, but they aren't exactly gonna gun for you. With a little luck they'll be preoccupied with the Navy or some other merchant convoy. You want to shoot the red asteroids. Make sure you collect the deposits as soon as you blast them apart before they scatter into space. 15 tons of Neodymium for <payment>, that's all I ask. Do we have a deal?"`
+			`	He talks quickly. "Good, good. This is the deal. The nearby system, <waypoint>, is where we usually collect the material. It's probably gonna be a little dangerous, but they aren't exactly going to gun for you. With a little luck they'll be preoccupied with the Navy or some other merchant convoy. You want to shoot the red asteroids. Make sure you collect the deposits as soon as you blast them apart before they scatter into space. 15 tons of Neodymium for <payment>, that's all I ask. Do we have a deal?"`
 			choice
 				`	"Deal."`
 					goto deal
@@ -112,7 +112,7 @@ mission "mining operation [combat1]"
 				`	"You still havent told me your name."`
 					goto name
 			label name
-			`	The man shrugs. "Just call me Weir. But that's not what's important."`
+			`	The man shrugs and reaches over to flip the card around, pointing at one of the bolded names on the back, Weir Davis. "Just call me Weir."`
 				goto sigh
 			label sigh
 			`	"He sighs and pauses for a second. The bartender finally got to him and he takes a minute waiting for his drink. He finally swivels his body towards you, pint of beer in hand.`
@@ -120,7 +120,7 @@ mission "mining operation [combat1]"
 			choice
 				`	"Yes, I think so."`
 				`	[Shake your head]`
-			`	"It's what we use to make magnetized alloys for the generators. The stuff is quite pricey, so we really try to harvest it ourselves. Except we can't. So now we've gotten shortage of the stuff, so we can't produce anything if we can't keep up the supply."`
+			`	"It's what we use to make magnetized alloys for the generators. The stuff is quite pricey, so we really try to harvest it ourselves. But with recent supply issues, production has been taking a hit."`
 			`	He takes a long swig from his beer. "Here's the issue. When we recalled our fleets back to Prime, not... all of them made it back. We're still missing two freighters, the Silent Flute and the Kilimanjaro. With a little luck, they're still stuck around in the Hassaleh system, but I don't want any false hope. They're jam packed with Neodymium, to the point the shipment's probably worth more than the ships. I'd ask the navy, but they're a little stretched thin at the moment. Any chance you can go looking for them?"`
 			choice
 				`	"Can't you use your own people to find them?"`
@@ -493,6 +493,7 @@ phrase "generic Neodymium delivered"
 		`Neodymium`
 		`raw ore`
 		`Neodymium ore`
+		`red ore`
 	word
 		` off your ship`
 		` out of the cargo hold`
