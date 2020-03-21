@@ -121,7 +121,7 @@ mission "mining operation [combat1]"
 				`	"Yes, I think so."`
 				`	[Shake your head]`
 			`	"It's what we use to make magnetized alloys for the generators. The stuff is quite pricey, so we really try to harvest it ourselves. But with recent supply issues, production has been taking a hit."`
-			`	He takes a long swig from his beer. "Here's the issue. When we recalled our fleets back to Prime, not... all of them made it back. We're still missing two freighters, the Silent Flute and the Kilimanjaro. With a little luck, they're still stuck around in the Hassaleh system, but I don't want any false hope. They're jam packed with Neodymium, to the point the shipment's probably worth more than the ships. I'd ask the navy, but they're a little stretched thin at the moment. Any chance you can go looking for them?"`
+			`	He takes a long swig from his beer. "Here's the issue. When we recalled our fleets back to Prime, not... all of them made it back. We're still missing two freighters, the Silent Flute and the Kilimanjaro. With a little luck, they're still stuck around in the Hassaleh system, but I don't want any false hope. Their stores are filled with Neodymium, to the point the shipment's probably worth more than the ships. I'd ask the navy, but they're a little stretched thin at the moment. Any chance you can go looking for them?"`
 			choice
 				`	"Can't you use your own people to find them?"`
 					goto find
@@ -238,7 +238,7 @@ mission "mining operation [noncombat2]"
 			`	"Glad to hear," he replies. "At least you seem to be having good luck. Wish I could say that about my people at the moment."`
 				goto beer
 			label beer
-			`	Weir watches his team finish unloading the precious metals and checks his watch. "Listen, I have to leave and help with processing, but come by the bar in an hour. I'd like to talk about what's going on with those raids		ship "Hawk" "Ace"		ship "Hawk" "Ace"."`
+			`	Weir watches his team finish unloading the precious metals and checks his watch. "Listen, I have to leave and help with processing, but come by the bar in an hour. I'd like to talk about what's going on with those raids."`
 
 event "timed beer" 1
 
@@ -259,7 +259,7 @@ mission "mining operation [combat2]"
 
 	on offer
 		conversation
-			`Using Weir's business card, you track down the Jazwell manufacturing center and call ahead. Within a couple minutes, you get ahold of him on the other end. "Captain <last>! Good timing. We have a mining ship about to head out to Rigel and it needs an escort. Pay will be the same as last time. Interested?"`
+			`Using Weir's business card, you track down the Jazwell manufacturing center and call ahead. Within a couple minutes, you get ahold of him on the other end. "Captain <last>! Good timing. We have a mining ship about to head out to Rigel and it needs an escort. Pay will be <payment>. Interested?"`
 			choice
 				`	"Consider it done."`
 					goto done
