@@ -20,15 +20,15 @@ mission "mining operation [noncombat1]"
 	
 	on offer
 		conversation
-			`While sipping your drink and checking the menu, a man casually strolls up and takes the stool next to yours. The first thing you notice is his business casual suit, which might have been nice at one point had it not been for the multitude of scorch marks and singes all over. From the looks of it, he probably spends more time at a metalworking site common around here than at a desk.`
-			`	"Hey... are you the... captain of the <ship>?" He asks you, still staring forward waiting for the bartender to come serve him.`
+			`On the wings of the vast starport lie the various stores, shops, and bars, offering their services while cargo moves past the massive steel-framed hangar bays. While sipping your drink and checking the menu at one such place, a man casually strolls up and takes the stool next to yours. The first thing you notice is his business casual suit, which might have been nice at one point had it not been for the multitude of scorch marks and singes all over. From the looks of it, he probably spends more time at the metalworking sites common around here instead at a desk.`
+			`	"Excuse me. Are you the captain of... <ship>?" He asks you, still staring forward waiting for the bartender to come serve him.`
 			choice
 				`	"Who's asking?"`
 				`	"Yeah. Is there something you need?"`
 				`	"You got the wrong person."`
 						decline
-			`	He pulls out a business card and slides it underneath your half-empty glass. On it is a company name, Jazwell Tempering, and a graphic of a half-molten alloy dripping over an abstract shape resembling the letter J.`
-			`	"You probably haven't heard of us. We subcontract out to various big names. Delta V. The Navy. Various maintainence agencies. Basically, we refine and work metal into engine components. Normally we handle all the work, from having our own mining fleet to refining, to working, and finally to building those components. Makes things cheaper in the long run."`
+			`	He pulls out a business card and slides it across, underneath your half-empty glass. On it is a company name, Jazwell Tempering, and a graphic of a half-molten alloy dripping over an abstract shape resembling the letter J.`
+			`	"We subcontract out to various big names. Delta V. The Navy. Various maintainence agencies. We're the ones who refine and work metal into engine components. Normally we handle the whole process, from the mining, refining, to working, and finally to building those components. Makes things cheaper in the long run."`
 			choice
 				`	"So why are you approaching an independent captain?"`
 					goto sigh
@@ -37,7 +37,7 @@ mission "mining operation [noncombat1]"
 				`	"You still havent told me your name."`
 					goto name
 			label name
-			`	The man shrugs. "Just call me Weir. But that's not what's important."`
+			`	The man shrugs and reaches over to flip the card around, pointing at one of the bolded names, Weir Davis. "Just call me Weir."`
 			label sigh
 			`	"He sighs and pauses for a second. The bartender finally got to him and he takes a minute waiting for his drink. He finally swivels his body torwards you, pint of beer in hand.`
 			`	"Here's the thing. We've had to put a hold on our mining convoys while getting things sorted out. Some kind of bounty on our fleets. The cargo is quite a valuable commodity. Tell me, have you heard of Neodymium?"`
@@ -271,7 +271,7 @@ mission "mining operation [combat2]"
 				accept
 
 	npc kill
-		personality plunders waiting harvests
+		personality plunders entering harvests
 		system Rigel
 		government Pirate
 		ship "Hawk" "Hawk (Speedy)" "Joker"
@@ -342,6 +342,31 @@ mission "mining operation [noncombat3]"
 			`	"What now?" you ask, as you contemplate ordering a beer incase you're here for longer.`
 			`	"Now? Well, until I find out more about who I'm up against, there's not much you can really do for me. Unless you want to get more ore for me, which I'll always accept in the meantime. Just understand it'll be pretty dangerous for now. They seem to catch on pretty quickly who I use." Weir streches his arms up and yawns. "Thanks for coming, <first>. I'll get word out to you when I finally need you back."`
 				decline
+				
+outfit "Jazwell Documents"
+	category "Special"
+	cost -10000
+	thumbnail "outfit/license"
+	description "This messy compilation of digital files and paper manifests comprise the important documents for 
+
+
+ship "Freighter" "Boarding Documents"
+	outfits
+		"Laser Turret" 2
+		"Heavy Anti-Missile Turret"
+		"NT-200 Nucleovoltaic"
+		"Supercapacitor"
+		"D14-RN Shield Generator"
+		"Ramscoop"
+		"Outfits Expansion"
+		"Greyhound Plasma Thruster"
+		"X3200 Ion Steering"
+		"Scram Drive"
+		"Jazwell Documents"
+	turret "Laser Turret"
+	turret "Heavy Anti-Missile Turret"
+	turret "Laser Turret"
+
 
 
 mission "mining operation [combat3]"
@@ -351,7 +376,7 @@ mission "mining operation [combat3]"
 	to offer
 		has "mining operation [combat2]: done"
 
-	npc board
+	npc disable
 		personality timid nemesis target
 		system Gorvi
 		government Pirate
@@ -408,7 +433,7 @@ mission "mining operation [combat3]"
 			`	The image of several mutilated bodies sticks with you, and decide that if this is what you're up against, it won't end well for you. Weir gives a sigh of resignation as he downs his shot. "This is a rough business, <first>. I just wished I could have counted on you."`
 				decline
 			label destroy
-			`	"Because the mission author wanted to use the boarding mechanic and didn't really think this mission through," Weir answers. "Also, he wants to subtly offer a way that promotes disabling rather than destroying the ship without it looking unnatural. The in-universe explanation will come, but you'll have to wait."`
+			`	"`
 				choice
 				`	"I'll get those manifests back."`
 						goto get
@@ -419,7 +444,7 @@ mission "mining operation [combat3]"
 				accept
 
 	on fail
-		dialog `The Golden Jewel was destroyed before you had a chance to board it. Next time, don't get so trigger happy.`
+		dialog `The Golden Jewel was destroyed before you could return the ship. Weir is not going to like this.`
 
 	on complete
 		payment 40000
