@@ -452,3 +452,47 @@ mission "mining operation [combat3]"
 		conversation
 			`It doesn't take long at all for one of Weir's assistants to arrive at the hangar after learning of your arrival. He's thrilled upon receiving the manifests, thumbing through the haphazard mix of physical and digital files. "He's going to be relieved about this," he exclaims with the slightest hint of a smile, handing you a <payment> chip. "He, on behalf of Jazwell, thanks you dearly for these documents."`
 
+mission "Neodymium Rush Order for Jazwell"
+	name "Neodymium Rush Order for Jazwell"
+	description "Jazwell Tempering has asked for a rush order of 30 tons of Neodymium by <date>. Payment is <payment>."
+	job
+	repeat
+	to offer
+		has "Mining Operation [noncombat3]: done"
+		not "Neodymium Rush Order for Jazwell: active"
+		random < 20
+	source
+		"Prime"
+	on visit
+		dialog phrase "You've landed on the Prime, but don't have the requested amount of ore!"
+	on complete
+		outfit "Neodymium" -1
+		"remnant: broken jump drive count" ++
+		payment 140000
+		dialog phrase "generic Neodymium delivered"
+		
+phrase "generic Neodymium delivered"
+	word
+		`Upon landing, the dock workers immediately unload `
+		`It doesn't take long for to unhand `
+		`Workers move to take `
+	word
+		`your cargo of `
+		`the `
+		`your `
+		`the shipment of `
+		``
+	word
+		`Neodymium`
+		`raw ore`
+		`Neodymium ore`
+	word
+		` off your ship`
+		` out of the cargo hold`
+		`into freight trucks`
+		`into a designated area`
+		``
+	word
+		`, and you receive your payment of <payment>.`
+		`. A transfer of <payment> to your account shortly follows.`
+		`, and a person shows up to provide you the promised <payment> shortly after.`
