@@ -345,7 +345,6 @@ mission "mining operation [noncombat3]"
 				
 outfit "Jazwell Documents"
 	category "Special"
-	cost -10000
 	thumbnail "outfit/license"
 	description "This messy compilation of digital files and paper manifests comprise important documents for Jazwell Tempering."
 
