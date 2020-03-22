@@ -396,7 +396,7 @@ mission "Captured Pirates (Medium)"
 	description "Transport <bunks> captured pirates to <destination> and collect a live bounty."
 	to offer
 		random < 5
-		"combat rating" > 1200
+		"combat rating" > 65
 	source
 		government "Pirate"
 		category "Medium Warship"
@@ -433,7 +433,7 @@ mission "Captured Pirates (Large)
 	description "Transport <bunks> captured pirates to <destination> and collect a live bounty."
 	to offer
 		random < 5
-		"combat rating" > 4000
+		"combat rating" > 120
 	source
 		government "Pirate"
 		category "Heavy Warship"
